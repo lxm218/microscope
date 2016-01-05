@@ -2,9 +2,9 @@ Template.postEdit.events({
   'submit form': function(e){
     e.preventDefault();
 
-    var currentPostId=this._id;
+    var currentPostId = this._id;
 
-    var postProperties={
+    var postProperties = {
       url: $(e.target).find('[name=url]').val(),
       title: $(e.target).find('[name=title]').val()
     }
@@ -13,7 +13,7 @@ Template.postEdit.events({
       if (error){
         alert(error.reason);
       } else {
-        Route.go ('postPage', {_id: currentPostId});
+        Router.go ('postPage', {_id: currentPostId});
       }
     });
   },
